@@ -1,0 +1,710 @@
+/* ============================================
+   VARIABLES
+============================================ */
+
+:root {
+    --fondo: linear-gradient(135deg, #667eea, #764ba2);
+    --contenedor: #ffffff;
+    --texto: #252525;
+    --texto-secundario: #666666;
+    --input: #ffffff;
+    --borde: #dddddd;
+    --tarea: #f8f9fa;
+    --boton: #637bea;
+    --boton-hover: #5066d5;
+}
+
+
+/* ============================================
+   MODO OSCURO
+============================================ */
+
+body.modo-oscuro {
+    --fondo: linear-gradient(135deg, #111827, #312e81);
+    --contenedor: #1f2937;
+    --texto: #f3f4f6;
+    --texto-secundario: #d1d5db;
+    --input: #374151;
+    --borde: #4b5563;
+    --tarea: #374151;
+    --boton: #6366f1;
+    --boton-hover: #4f46e5;
+}
+
+
+/* ============================================
+   GENERAL
+============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--fondo);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 50px 20px;
+
+    color: var(--texto);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* ============================================
+   CONTENEDOR
+============================================ */
+
+.container {
+    width: 100%;
+
+    max-width: 850px;
+
+    background: var(--contenedor);
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.15);
+
+    transition:
+        background 0.4s ease;
+}
+
+
+/* ============================================
+   ENCABEZADO
+============================================ */
+
+.encabezado {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+h1 {
+    font-size: 42px;
+
+    color: var(--texto);
+}
+
+
+/* ============================================
+   BOTÓN TEMA
+============================================ */
+
+.btn-tema {
+    width: 52px;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--tarea);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.3s ease;
+}
+
+
+.btn-tema:hover {
+    transform: scale(1.1);
+}
+
+
+/* ============================================
+   FORMULARIO
+============================================ */
+
+#form-tarea {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr auto;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+#form-tarea input,
+#form-tarea select {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: 2px solid var(--borde);
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    background: var(--input);
+
+    color: var(--texto);
+
+    outline: none;
+
+    transition:
+        border 0.3s ease,
+        background 0.3s ease;
+}
+
+
+#form-tarea input:focus,
+#form-tarea select:focus {
+
+    border-color: var(--boton);
+}
+
+
+.btn-agregar {
+
+    border: none;
+
+    background: var(--boton);
+
+    color: white;
+
+    padding: 0 24px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.btn-agregar:hover {
+
+    background: var(--boton-hover);
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   FILTROS
+============================================ */
+
+.filtros {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.filtro {
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 25px;
+
+    background: #eeeeee;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.filtro:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.filtro.activo {
+
+    background: var(--boton);
+
+    color: white;
+}
+
+
+body.modo-oscuro .filtro {
+
+    background: #374151;
+
+    color: white;
+}
+
+
+body.modo-oscuro .filtro.activo {
+
+    background: var(--boton);
+}
+
+
+/* ============================================
+   FILTRO CATEGORÍA
+============================================ */
+
+.filtro-categoria-contenedor {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+.filtro-categoria-contenedor label {
+
+    color: var(--texto-secundario);
+
+    font-weight: bold;
+}
+
+
+#filtro-categoria {
+
+    padding: 9px 15px;
+
+    border: 2px solid var(--borde);
+
+    border-radius: 10px;
+
+    background: var(--input);
+
+    color: var(--texto);
+
+    cursor: pointer;
+}
+
+
+/* ============================================
+   LISTA
+============================================ */
+
+#lista-tareas {
+
+    list-style: none;
+}
+
+
+/* ============================================
+   TAREA
+============================================ */
+
+.tarea {
+
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: var(--tarea);
+
+    padding: 18px 20px;
+
+    margin-bottom: 14px;
+
+    border-radius: 14px;
+
+    border-left: 5px solid transparent;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.tarea:hover {
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   CHECKBOX
+============================================ */
+
+.tarea input[type="checkbox"] {
+
+    width: 23px;
+
+    height: 23px;
+
+    cursor: pointer;
+}
+
+
+/* ============================================
+   CONTENIDO TAREA
+============================================ */
+
+.contenido-tarea {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+.tarea-texto {
+
+    font-size: 18px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.tarea-fecha {
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+}
+
+
+/* ============================================
+   CATEGORÍA
+============================================ */
+
+.categoria {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 4px 10px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.categoria-trabajo {
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+.categoria-personal {
+
+    background: #fce7f3;
+
+    color: #be185d;
+}
+
+
+.categoria-escuela {
+
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+.categoria-otro {
+
+    background: #f3e8ff;
+
+    color: #7e22ce;
+}
+
+
+/* ============================================
+   COMPLETADA
+============================================ */
+
+.tarea.completada {
+
+    opacity: 0.65;
+}
+
+
+.tarea.completada .tarea-texto {
+
+    text-decoration: line-through;
+}
+
+
+/* ============================================
+   POR VENCER
+============================================ */
+
+.tarea.por-vencer {
+
+    border-left-color: #f59e0b;
+
+    background: #fff7df;
+}
+
+
+body.modo-oscuro .tarea.por-vencer {
+
+    background: #4b3a16;
+}
+
+
+/* ============================================
+   VENCIDA
+============================================ */
+
+.tarea.vencida {
+
+    border-left-color: #ef4444;
+
+    background: #fee2e2;
+}
+
+
+body.modo-oscuro .tarea.vencida {
+
+    background: #4b2020;
+}
+
+
+/* ============================================
+   BOTONES EDITAR / ELIMINAR
+============================================ */
+
+.btn-editar,
+.btn-eliminar {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.btn-editar {
+
+    background: #dbeafe;
+}
+
+
+.btn-eliminar {
+
+    background: #fee2e2;
+}
+
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+
+    transform: scale(1.1);
+}
+
+
+/* ============================================
+   ANIMACIÓN AL ELIMINAR
+============================================ */
+
+.tarea.eliminando {
+
+    animation:
+        eliminarTarea 0.5s forwards;
+}
+
+
+@keyframes eliminarTarea {
+
+    0% {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+        max-height: 150px;
+    }
+
+    70% {
+
+        opacity: 0;
+
+        transform: translateX(70px);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform: translateX(100px);
+
+        max-height: 0;
+
+        padding-top: 0;
+
+        padding-bottom: 0;
+
+        margin-bottom: 0;
+    }
+}
+
+
+/* ============================================
+   SIN TAREAS
+============================================ */
+
+.sin-tareas {
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+
+    background: var(--tarea);
+
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+
+/* ============================================
+   CONTADOR
+============================================ */
+
+.contador {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+}
+
+
+#contador-pendientes {
+
+    font-weight: bold;
+
+    color: var(--boton);
+}
+
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 750px) {
+
+    body {
+
+        padding: 20px 10px;
+    }
+
+
+    .container {
+
+        padding: 25px;
+    }
+
+
+    h1 {
+
+        font-size: 30px;
+    }
+
+
+    #form-tarea {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .btn-agregar {
+
+        padding: 15px;
+    }
+
+
+    .filtros {
+
+        flex-wrap: wrap;
+    }
+
+
+    .tarea {
+
+        grid-template-columns:
+            auto 1fr auto auto;
+    }
+}

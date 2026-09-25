@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Encabezado -->
+        <div class="encabezado">
+
+            <h1>📝 Mi Lista de Tareas</h1>
+
+            <!-- Botón modo claro / oscuro -->
+            <button
+                id="btn-tema"
+                class="btn-tema"
+                type="button"
+                aria-label="Cambiar modo de color">
+                🌙
+            </button>
+
+        </div>
+
+
+        <!-- Formulario -->
+        <form id="form-tarea">
+
+            <input
+                type="text"
+                id="input-tarea"
+                placeholder="¿Qué necesitas hacer?"
+                required
+            >
+
+
+            <!-- Fecha límite -->
+            <input
+                type="date"
+                id="input-fecha"
+                required
+            >
+
+
+            <!-- Categoría -->
+            <select id="input-categoria" required>
+
+                <option value="">
+                    Categoría
+                </option>
+
+                <option value="Trabajo">
+                    Trabajo
+                </option>
+
+                <option value="Personal">
+                    Personal
+                </option>
+
+                <option value="Escuela">
+                    Escuela
+                </option>
+
+                <option value="Otro">
+                    Otro
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="btn-agregar">
+                Agregar
+            </button>
+
+        </form>
+
+
+        <!-- Filtros por estado -->
+        <div class="filtros">
+
+            <button
+                class="filtro activo"
+                data-filtro="todas">
+
+                Todas
+
+            </button>
+
+
+            <button
+                class="filtro"
+                data-filtro="pendientes">
+
+                Pendientes
+
+            </button>
+
+
+            <button
+                class="filtro"
+                data-filtro="completadas">
+
+                Completadas
+
+            </button>
+
+        </div>
+
+
+        <!-- Filtro de categorías -->
+        <div class="filtro-categoria-contenedor">
+
+            <label for="filtro-categoria">
+                Categoría:
+            </label>
+
+            <select id="filtro-categoria">
+
+                <option value="todas">
+                    Todas
+                </option>
+
+                <option value="Trabajo">
+                    Trabajo
+                </option>
+
+                <option value="Personal">
+                    Personal
+                </option>
+
+                <option value="Escuela">
+                    Escuela
+                </option>
+
+                <option value="Otro">
+                    Otro
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Lista -->
+        <ul id="lista-tareas">
+
+            <!-- JavaScript crea aquí las tareas -->
+
+        </ul>
+
+
+        <!-- Contador -->
+        <p class="contador">
+
+            <span id="contador-pendientes">
+                0
+            </span>
+
+            tareas pendientes
+
+        </p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
